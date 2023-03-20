@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100; 300; 400; 500; 700; 900&display=swap');/* http://meyerweb.com/eric/tools/css/reset/ 
+
+ v2.0 | 20110126
+ License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {margin: 0;padding: 0;border: 0;font-size: 100%;font: inherit;vertical-align: baseline; } 
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {display: block; } 
+body {line-height: 1; } 
+ol, ul {list-style: none; } 
+blockquote, q {quotes: none; } 
+blockquote:before, blockquote:after,
+q:before, q:after {content: '';content: none; } 
+table {border-collapse: collapse;border-spacing: 0; } 
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+
+body { font-family: 'Noto Sans KR', sans-serif; } 
+a { text-decoration: none; color: black;} 
+li { list-style: none; } 
+address { font-style: normal; } 
+button {cursor: pointer; background-color: transparent; border: none;}
+
+.inner {width: 1440px; margin: 0 auto;}
+.ico {background-image: url("../images/ico.png");}
+.icon {width: 31px; height: 22px;}
+.blind {display: none;}
+.t_center {text-align: center;}
+.t_left {text-align: left;}
+.white {color: white;}
+
+/* z-index */
+header {z-index: 10;}
+
+header {background-color: rgba(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; width: 100%;}
+header.over {background-color: white;}
+header.over h1 a {background-position-y: -49px;}
+header.over #totalMenu {background-position-y: -50px;}
+header.over ul li a {color: black;}
+header.over #search {border: 1px solid #aaa; color: black;}
+header.over #search::after {background-position-y: -52px;}
+header.over .i-sns {background-position-y: -523px;}
+header.over .i-kor {background-position-y: -49px;}
+
+header div {height: 110px; display: flex; justify-content: space-between; align-items: center;}
+header h1 a {display: block; width: 160px; height: 50px;}
+header ul {display: flex; }
+header ul li {padding: 0 25px;}
+header ul li a {color: white;}
+header ul li a:hover {color: #f37321;}
+header ul li:first-child {padding-left: 0 !important;}
+header #totalMenu {margin: 0 50px; width: 50px; height: 24px; background-position-x: -650px;}
+header #totalMenu:hover {background-position-y: -25px;}
+header #topMenu button {margin: 0 20px;}
+
+header .i-sns {background-position-x: -588px; background-position-y: -473px;}
+header .i-sns:hover {background-position-y: -498px;}
+header .i-kor {background-position-x: -273px;}
+header .i-kor:hover {background-position-y: -24px;}
+
+header #search {margin-right: 0; width: 140px; height: 40px; border: 1px solid white; color: white; text-align: left; border-radius: 20px; padding: 0 15px; position: relative;}
+header #search::after {content: ""; width: 20px; height: 20px; position: absolute; top: 10px; right: 15px; background-image: url("../images/ico.png"); background-position-x: -240px;}
+header #search:hover {background-color: #f37321; border-color: #f37321;}
+
+#section1 {height: 100vh; background-image: url('../images/vis_1.jpg'); position: relative;}
+#section1 article {position: absolute; top: 400px; width: 100%;}
+#section1 article p:first-child {font-size: 40px; margin-bottom: 15px; line-height: 60px;}
+#section1 article p:nth-child(2) {font-size: 20px; margin-bottom: 30px; line-height: 30px;}
+#section1 article .more_btn {transition: all 0.5s; position: relative; display: block; width: 186px; height: 54px; border: 2px solid white; border-radius: 27px; margin: 0 auto; box-sizing: border-box; line-height: 50px; padding: 0 20px;}
+#section1 article .more_btn span {position: absolute; top: 12px; right: 15px;}
+#section1 article .more_btn:hover {background-color: #f37321; border-color: #f37321;}
