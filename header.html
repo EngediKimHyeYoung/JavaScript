@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {margin: 0; padding: 0;}
+
+        header {background-color: rgba(0, 0, 0, 0.5); height: 0px; position: fixed; top: 0; left: 0; width: 100%;}
+        header.show {animation: headerShow 1s forwards; }
+        header.hide {animation: headerHide 1s forwards; }
+        @keyframes headerShow {
+            from {height: 0px}
+            to {height: 80px;}
+        }
+        @keyframes headerHide {
+            from {height: 80px}
+            to {height: 0px;}
+        }
+
+        section {background-color: aquamarine; height: 100vh;}
+        section:nth-child(even) {background-color: bisque;}
+
+        footer {background-color: gray; height: 200px;}
+    </style>
+</head>
+
+<body>
+    <header></header>
+    <section></section>
+    <section></section>
+    <section></section>
+    <section></section>
+    <footer></footer>
+
+    <script>
+        const header = document.querySelector('header');
+        header.classList.add('show');
+        window.addEventListener("scroll", function () {
+            if (window.pageYOffset > 300) {
+                header.classList.remove('show');
+                header.classList.add('hide');
+            } else {
+                header.classList.add('show');
+                header.classList.remove('hide');
+            }
+        });
+    </script>
+</body>
+
+</html>
