@@ -54,7 +54,7 @@ button {cursor: pointer; background-color: transparent; border: none;}
 /* z-index */
 header {z-index: 10;}
 
-header {background-color: rgba(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; width: 100%;}
+header {background-color: rgba(0, 0, 0, 0.5); position: fixed; top: 0; left: 0; width: 100%; transition: all 1s;}
 header.over {background-color: white;}
 header.over h1 a {background-position-y: -49px;}
 header.over #totalMenu {background-position-y: -50px;}
