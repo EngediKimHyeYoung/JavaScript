@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        #box {
+            border: 2px solid red;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        #text {
+            position: fixed;
+            top: 100px;
+            left:100px;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="box">box</p>
+    <div id="text">
+        <p id="t1">text</p>
+        <p id="t2">text</p>
+        <p id="t3">text</p>
+        <p id="t4">text</p>
+    </div>
+    <script>
+        window.onload = function () {
+            const element = document.getElementById("box");
+          
+
+            window.addEventListener("scroll", function () {
+                // console.log("clientHeight: "+ document.body.clientHeight);
+                // console.log("innerHeight: "+ window.innerHeight);
+                // console.log("scrollY: "+ window.scrollY);
+                document.getElementById("t1").innerText = "clientHeight: "+ document.body.clientHeight;
+                document.getElementById("t2").innerText = "innerHeight: "+ window.innerHeight;
+                document.getElementById("t3").innerText = "scrollY: "+ window.scrollY;
+                document.getElementById("t4").innerText = "clientHeight-innerHeight: "+ (document.body.clientHeight - window.innerHeight);
+                
+                width =  Math.floor(window.scrollY /(document.body.clientHeight-window.innerHeight + 16)  * 100) + "%";
+                console.log(window.scrollY /(document.body.clientHeight-window.innerHeight + 16)  * 100);
+                element.style.width = width;
+            });
+        }
+    </script>
+</body>
+
+</html>
