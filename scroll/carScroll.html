@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+        }
+
+        #img {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: fit-content;
+            box-sizing: border-box;
+        }
+        #text {
+            position: fixed;
+            top: 100px;
+            left:100px;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="img" src="./NNP/0.png">
+    <div id="text">
+        <p id="t1">text</p>
+        <p id="t2">text</p>
+        <p id="t3">text</p>
+        <p id="t4">text</p>
+        <p id="t5">text</p>
+        <p id="t6">text</p>
+        <p id="t7">text</p>
+    </div>
+    <script>
+        window.onload = function () {
+            const element = document.getElementById("box");
+            const totalNum = 71;
+            let frame = 0;
+            let height;
+
+            window.addEventListener("scroll", function () {
+                document.getElementById("t1").innerText = "clientHeight: "+ document.body.clientHeight;
+                document.getElementById("t2").innerText = "innerHeight: "+ window.innerHeight;
+                document.getElementById("t3").innerText = "scrollY: "+ window.scrollY;
+                document.getElementById("t4").innerText = "clientHeight-innerHeight: "+ (document.body.clientHeight - window.innerHeight);
+                document.getElementById("t5").innerText = height + " %";
+                document.getElementById("t6").innerText = frame + " frame";
+                document.getElementById("t7").innerText = document.getElementById("img").src;
+
+                height =  Math.floor(window.scrollY /(document.body.clientHeight-window.innerHeight)  * 100);
+                frame =  Math.floor(totalNum * height/100)
+                document.getElementById("img").setAttribute("src", "./NNP/" + frame + ".png");
+
+            });
+        }
+    </script>
+</body>
+
+</html>
