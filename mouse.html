@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li {
+            width: 300px;
+            padding: 10px;
+            background: #ccc;
+        }
+
+        ul li a {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li class="item"><a href="#">menu1</a></li>
+            <li class="item"><a href="#">menu2</a></li>
+            <li class="item"><a href="#">menu3</a></li>
+        </ul>
+    </header>
+    <script>
+        document.querySelectorAll(".item")[0].onmouseout = function () {
+            console.log("ok");
+            document.querySelectorAll(".item")[0].style.border = "2px solid red";
+        }
+        document.querySelectorAll(".item")[1].onmouseleave = function () {
+            console.log("ok");
+            document.querySelectorAll(".item")[1].style.border = "2px solid red";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {border: 3px solid red; height: 100vh; margin: 0;}
+        #demo {border:1px solid black; padding:4px;}
+    </style>
+</head>
+
+<body id="body">
+    <p id="demo">Coordinates:</p>
+    </div>
+    <script>
+        function showCoords(event) {
+            console.log(event);
+            let x = event.clientX;
+            let y = event.clientY;
+            let text = "X coords: " + x + ", Y coords: " + y;
+            document.getElementById("demo").innerHTML = text;
+        }
+        document.getElementById("body").onclick = function(){
+            console.log("click");
+            showCoords(event);
+        };
+    </script>
+</body>
+
+</html>
