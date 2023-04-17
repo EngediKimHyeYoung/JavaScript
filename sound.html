@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    <h1>Sound</h1>
+    <audio controls>
+        <source src="./mp3/JaneStreet-TrackTribe.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="Sound1">
+        <source src="./mp3/Strollin-TrackTribe.mp3" type="audio/mpeg">
+    </audio>
+
+    <button id="playBtn" type="button">Play</button>
+    <button id="pauseBtn" type="button">Pause</button>
+    <button id="stopBtn" type="button">Stop</button>
+
+    <script>
+        var mySound = document.getElementById("Sound1");
+        console.log(mySound);
+        document.getElementById("playBtn").onclick = function(){
+            mySound.play();
+        };
+        document.getElementById("pauseBtn").onclick = function(){
+            mySound.pause();
+        };
+        document.getElementById("stopBtn").onclick = function(){
+            mySound.pause();
+            mySound.currentTime = 0;
+        };
+    </script>
+</body>
+
+</html>

@@ -32,9 +32,13 @@
             console.log("ok");
             document.querySelectorAll(".item")[0].style.border = "2px solid red";
         }
+        document.querySelectorAll(".item")[1].onmouseenter = function () {
+            console.log("ok");
+            document.querySelectorAll(".item")[1].style.border = "2px solid green";
+        }
         document.querySelectorAll(".item")[1].onmouseleave = function () {
             console.log("ok");
-            document.querySelectorAll(".item")[1].style.border = "2px solid red";
+            document.querySelectorAll(".item")[1].style.border = "2px solid blue";
         }
     </script>
 </body>
