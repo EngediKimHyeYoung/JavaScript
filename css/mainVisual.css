@@ -1,13 +1,13 @@
-body {margin: 0; font-family: 'Noto Sans KR', sans-serif;}
+body {font-family: 'Noto Sans KR', sans-serif;}
+body, ul, figure {margin: 0; padding: 0;}
 li {list-style: none;}
-ul {padding: 0;}
-figure {margin: 0;}
 a {text-decoration: none;}
+.blank {display: none;}
 
 #imgSet #ulSet li>span:nth-of-type(1) {z-index: 1000;}
 #imgSet #ulSet li>span:nth-of-type(2) {z-index: 1002;}
-#imgSet #ulSet li>span:nth-of-type(3) {z-index: 1003;}
-#imgSet #ulSet li.listShow>span:nth-of-type(4) {z-index: 1004;}
+#imgSet #ulSet li>a {z-index: 1003;}
+#imgSet #ulSet li.listShow>span:nth-of-type(3) {z-index: 1004;}
 #imgSet .text {z-index: 1005;}
 #imgSet .button {z-index: 1006;}
 #imgSet #ulSet li {z-index: 1007;}
@@ -15,11 +15,9 @@ a {text-decoration: none;}
 #imgSet {position: relative; box-sizing: border-box; height: 100vh; overflow: hidden;}
 #imgSet .img {position: absolute; top: 0; left: 0; width: 100%;; overflow: hidden;}
 #imgSet .imgHide {animation: imgSlideMotion 1s forwards; overflow: hidden;}
-#imgSet .text {opacity: 0; position: absolute; top: 30%; left: 0; width: 100%; padding: 0 400px; text-align: center; color: white; word-break: keep-all; font-size: 40px; 
-    font-weight: bold; text-shadow: rgba(0,0,0,0.7) 1px 0 10px; box-sizing: border-box; opacity: 0;}
+#imgSet .text {opacity: 0; position: absolute; top: 30%; left: 0; width: 100%; padding: 0 400px; text-align: center; color: white; word-break: keep-all; font-size: 40px; font-weight: bold; text-shadow: rgba(0,0,0,0.7) 1px 0 10px; box-sizing: border-box; opacity: 0;}
 #imgSet .textShow {animation: textShowMotion 1s forwards;}
-#imgSet .button {font-size: 13px; cursor: pointer; background-color: rgba(255,255,255,0.1); display: none; position: absolute; top: 50%; left: 50%; margin-left: -84px; 
-    padding: 20px 60px 20px 20px; border: 2px solid white; color: white; box-sizing: border-box; border-radius: 33px;}
+#imgSet .button {font-size: 13px; cursor: pointer; background-color: rgba(255,255,255,0.1); display: none; position: absolute; top: 50%; left: 50%; margin-left: -84px; padding: 20px 60px 20px 20px; border: 2px solid white; color: white; box-sizing: border-box; border-radius: 33px;}
 #imgSet .button:hover {background-color: rgba(0,0,0,0.5);}
 #imgSet .button::after {content: "→"; margin-left: 30px; font-size: 30px; position: absolute; top: 7px; right: 10px;}
 #imgSet .buttonShow {display: block; animation: buttonShowMotion 1s forwards;}
@@ -31,13 +29,13 @@ a {text-decoration: none;}
 
 #imgSet #ulSet li>span:nth-of-type(1) {position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); box-sizing: border-box;}
 #imgSet #ulSet li>span:nth-of-type(2) {position: absolute; top: 0; left: 0; width: 0%; height: 100%; background-color: white; box-sizing: border-box;}
-#imgSet #ulSet li>span:nth-of-type(3) {display: block; padding: 15px 80px 15px 30px; position: relative;}
+#imgSet #ulSet li>a {display: block; padding: 15px 80px 15px 30px; position: relative; color: white;}
 
-#imgSet #ulSet li.listShow {color: black;}
+#imgSet #ulSet li.listShow a {color: black;}
 #imgSet #ulSet li.listShow>span:nth-of-type(2) {animation: liMotion .5s forwards;}
-#imgSet #ulSet li.listShow>span:nth-of-type(4) {position: absolute; top: 50%; right: 0; width: 60px; height: 2px;  margin-top: -1px;}
-#imgSet #ulSet li.listShow>span:nth-of-type(4) span:nth-of-type(1) {position: absolute; top: 0; left: 0;  background-color: #999; width: 100%; height: 100%; box-sizing: border-box;}
-#imgSet #ulSet li.listShow>span:nth-of-type(4) span:nth-of-type(2) {animation: barMotion 3s forwards; position: absolute; top: 0; left: 0;  background-color: red;  width: 100%; height: 100%; box-sizing: border-box; }
+#imgSet #ulSet li.listShow>span:nth-of-type(3) {position: absolute; top: 50%; right: 0; width: 60px; height: 2px;  margin-top: -1px;}
+#imgSet #ulSet li.listShow>span:nth-of-type(3) span:nth-of-type(1) {position: absolute; top: 0; left: 0;  background-color: #999; width: 100%; height: 100%; box-sizing: border-box;}
+#imgSet #ulSet li.listShow>span:nth-of-type(3) span:nth-of-type(2) {animation: barMotion 3s forwards; position: absolute; top: 0; left: 0;  background-color: red;  width: 100%; height: 100%; box-sizing: border-box; }
 
 @keyframes imgSlideMotion {from {width: 0%;} to {width: 100%;}}
 @keyframes textShowMotion {from {opacity: 0; margin-top: 50px;} to {opacity: 1; margin-top: 0;}}
