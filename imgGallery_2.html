@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="./css/mainVisual.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <section id="imgSet">
+        <figure>
+            <div id="img1" class="img"><img src="./images/vis_1.jpg" alt=""></div>
+            <figcaption id="text1" class="text">1. 텍스트가 들어갑니다.</figcaption>
+        </figure>
+        <a href="#" id="button1" class="button">1 VIEW MORE</a>
+        <figure>
+            <div id="img2" class="img"><img src="./images/vis_2.jpg" alt=""></div>
+            <figcaption id="text2" class="text">2. 텍스트가 들어갑니다.</figcaption>
+        </figure>
+        <a href="#" id="button2" class="button">2 VIEW MORE</a>
+        <figure>
+            <div id="img3" class="img"><img src="./images/vis_3.jpg" alt=""></div>
+            <figcaption id="text3" class="text">3. 텍스트가 들어갑니다.</figcaption>
+        </figure>
+        <a href="#" id="button3" class="button">3 VIEW MORE</a>
+        <figure>
+            <div id="img4" class="img"><img src="./images/vis_4.jpg" alt=""></div>
+            <figcaption id="text4" class="text">4. 텍스트가 들어갑니다.</figcaption>
+        </figure>
+        <a href="#" id="button4" class="button">4 VIEW MORE</a>
+        <ul id="ulSet">
+            <li id="list1">
+                <span></span>
+                <span></span>
+                <span>01<span class="dot">.</span>CREATIVE</span>
+                <span><span></span><span></span></span>
+            </li>
+            <li id="list2">
+                <span></span>
+                <span></span>
+                <span>02<span class="dot">.</span>INNOVATIVE</span>
+                <span><span></span><span></span></span>
+            </li>
+            <li id="list3">
+                <span></span>
+                <span></span>
+                <span>03<span class="dot">.</span>CHEMICAL</span>
+                <span><span></span><span></span></span>
+            </li>
+            <li id="list4">
+                <span></span>
+                <span></span>
+                <span>04<span class="dot">.</span>GLOBAL</span>
+                <span><span></span><span></span></span>
+            </li>
+        </ul>
+    </section>
+    <script src="./js/mainVisual_2.js"></script>
+    <!-- <script>
+        
+        let imgSet = document.getElementById("imgSet");
+
+        let currentNum = 1;
+        let totalNum = imgSet.childElementCount-1;
+        // console.log(totalNum);
+        // document.getElementById("list1").children[1].style.backgroundColor = "red";
+        document.getElementById("list1").classList.add('show');
+        document.getElementById("list1")
+
+        let imgInit = function (num) {
+            // document.getElementById("list" + num).children[1].style.backgroundColor = "white";
+            document.getElementById("list" + num).classList.remove('show');
+            let clear = setInterval(function () {
+                imgSet.prepend(document.getElementById("img" + num));
+                document.getElementById("img" + num).classList.remove('hide');
+                
+                clearInterval(clear);
+            }, 1000);
+        }
+        setInterval(function () {
+            imgInit(currentNum);
+            if (currentNum == totalNum) {
+                currentNum = 1;
+            } else {
+                currentNum++;
+            }
+            console.log(currentNum);
+            // document.getElementById("list" + currentNum).children[1].style.backgroundColor = "red";
+            document.getElementById("list"+currentNum).classList.add('show');
+            if (currentNum == 1) {
+                document.getElementById("img" + totalNum).classList.add('hide');
+            } else {
+                document.getElementById("img" + (currentNum-1)).classList.add('hide');
+            }
+        }, 3000);
+    </script> -->
+
+</html>

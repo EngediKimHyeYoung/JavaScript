@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {margin: 0;}
+        #imgSet {position: relative; height: 100vh; box-sizing: border-box; overflow: hidden;}
+        #imgSet .img {position: absolute; top: 0; left: 0;}
+        .hide {animation: imgMotion 1s forwards; overflow: hidden;}
+        @keyframes imgMotion {from {width: 100%;} to {width: 0;}}
+    </style>
+</head>
+<body>
+    <div id="imgSet">
+        <div id="img4" class="img"><img src="./images/vis_4.jpg" alt=""></div>
+        <div id="img3" class="img"><img src="./images/vis_3.jpg" alt=""></div>
+        <div id="img2" class="img"><img src="./images/vis_2.jpg" alt=""></div>
+        <div id="img1" class="img"><img src="./images/vis_1.jpg" alt=""></div>
+    </div>
+    <script>
+        let currentNum = 0;
+        let totalNum = imgSet.childElementCount;
+        console.log(totalNum);
+        let imgInit = function(){
+            if(currentNum != 0){
+                document.getElementById("img" + currentNum).classList.remove("hide");
+            }
+        }
+        setInterval(function(){
+            imgInit();
+            if(currentNum == totalNum){
+                currentNum = 1;
+            } else {
+                currentNum++;
+            }
+            console.log(currentNum);
+            document.getElementById("img" + currentNum).classList.add("hide");
+            let clear = setInterval(function(){
+                document.getElementById("imgSet").prepend(document.getElementById("img" + currentNum));
+                clearInterval(clear);
+            }, 1000);
+        }, 3000);
+    </script>
+</body>
+</html>

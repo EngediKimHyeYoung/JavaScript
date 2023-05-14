@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const Book = function(title, pages, done){
+            console.log(title);
+            this.book_title = "제목: "+title;
+            this.book_pages = pages + "장";
+            this.book_done = done;
+            
+            this.finish = function(){
+                this.done == true ? str = "완독" : str = "읽는 중";
+                return str;
+            }
+        }
+        const Book1 = new Book("자바스크립트", 100, true);
+        console.log(Book1.book_title);
+        console.log(Book1.book_pages);
+        console.log(Book1.finish());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
