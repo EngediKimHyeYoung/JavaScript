@@ -6,12 +6,10 @@ let imgRoof;
 
 for (var i = 1; i <= totalNum; i++) {
     var list = document.getElementById("list" + i);
-    var span = document.createElement('span');
     list.innerHTML = "<span></span><span></span>" + list.innerHTML + "<span><span></span><span></span></span>";
     list.onclick = function () {
         clearInterval(imgRoof);
         currentNum = Number(this.id.slice(4, 5));
-        console.log(currentNum);
         viewImg();
         imgSetting();
     }

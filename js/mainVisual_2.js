@@ -1,4 +1,4 @@
-let indexNum = -30000;
+let indexNum = 0;
 let imgSet = document.getElementById("imgSet");
 let ulSet = document.getElementById("ulSet");
 let totalNum = ulSet.childElementCount;
@@ -18,7 +18,6 @@ for (var i = 1; i <= totalNum; i++) {
 }
 let imgSetting = function () {
     imgRoof = setInterval(function () {
-        console.log("ing");
         if (currentNum == totalNum) {
             currentNum = 1;
         } else {
@@ -34,10 +33,11 @@ let viewImg = function () {
         document.getElementById("button" + i).classList.remove('buttonShow');
         document.getElementById("img" + i).classList.remove('imgHide');
     }
-    document.getElementById("img4").style.width = "100%";
-    document.getElementById("img" + currentNum).classList.add('imgHide');
     document.getElementById("img" + (currentNum)).style.zIndex = ++indexNum;
-    console.log(document.getElementById("img" + (currentNum)).style.zIndex);
+    document.getElementById("img" + currentNum).classList.add('imgHide');
+    document.getElementById("list" + currentNum).classList.add('listShow');
+    document.getElementById("text" + currentNum).classList.add('textShow');
+    document.getElementById("button" + currentNum).classList.add('buttonShow');
     let clear = setInterval(function () {
         clearInterval(clear);
         if (currentNum == 1) {
@@ -46,10 +46,6 @@ let viewImg = function () {
             document.getElementById("img" + (currentNum - 1)).classList.remove('imgHide');
         }
     }, 1000);
-    document.getElementById("img" + currentNum).style.width = "100%";
-    document.getElementById("list" + currentNum).classList.add('listShow');
-    document.getElementById("text" + currentNum).classList.add('textShow');
-    document.getElementById("button" + currentNum).classList.add('buttonShow');
 }
 currentNum = 1;
 viewImg();
