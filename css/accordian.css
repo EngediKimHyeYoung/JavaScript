@@ -8,27 +8,27 @@ h2+p {font-size: 16px; margin-bottom: 40px;}
 
 .wrap {width: 1440px; margin: 0 auto; padding: 130px 0;}
 .center {text-align: center;}
-.more {font-weight: bold; display: block; margin: 20px  0 30px 0;;}
+.more {font-weight: bold; margin: 20px  0 30px 0; display: block;}
 .more::after {content: ">"; color: red; margin-left: 10px}
 
 #challenge {background-image: url("../images/fullbg_main.jpg");}
 #challenge #challengeSet {border-top: 5px solid black; border-bottom: 1px solid #333;}
-#challenge #challengeSet>dt {border-top: 1px solid #333; position: relative; padding: 30px 30px 30px 80px; cursor: pointer;}
+#challenge #challengeSet>dt {border-top: 1px solid #333; padding: 30px 30px 30px 80px; cursor: pointer; position: relative; }
 #challenge #challengeSet>dt::before {content: ""; position: absolute; width: 26px; height: 30px; left: 30px; background-image: url("../images/ico.png"); }
 #challenge #challengeSet>dt:nth-of-type(1):before {background-position-x: -84px; background-position-y: -205px;}
 #challenge #challengeSet>dt:nth-of-type(2):before {background-position-x: -144px; background-position-y: -205px;}
 #challenge #challengeSet>dt:after {content: ""; position: absolute; top: 50%; right: 30px; width: 17px; height: 11px; background-image: url("../images/ico.png"); background-position-x: -85px; background-position-y:-140px;}
-#challenge #challengeSet>dd {padding: 0 30px 0 80px; height: 0; overflow: hidden; transition: 1s; animation: slideUp 1s forwards;}
+#challenge #challengeSet>dd {padding: 0 30px 0 80px; transition: 1s; animation: slideUp 1s forwards; overflow: hidden; height: 0;}
 #challenge #challengeSet>dd>p {margin-bottom: 10px;}
 
-#challenge #challengeSet>dt.active:nth-of-type(1):before {background-position-x: -114px;}
-#challenge #challengeSet>dt.active:nth-of-type(2):before {background-position-x: -174px;}
+#challenge #challengeSet>dt.active::before {background-position-x: -114px;}
+#challenge #challengeSet>dt.active::after {background-position-y: -155px;}
+#challenge #challengeSet>dd.active {animation: slideDown 1s forwards;}
 
 #challenge #challengeSet dl dt, #challenge #challengeSet dl dd {display: inline-block; box-sizing: border-box;}
 #challenge #challengeSet dl dt {width: 13%; position: relative;}
 #challenge #challengeSet dl dt::after {content: "."; color: #999; position: absolute; right: 30px;}
 #challenge #challengeSet dl dd {width: 83%; margin: 10px 0;}
-#challenge #challengeSet>dt.active:after {background-position-y: -155px;}
-#challenge #challengeSet>dd.active {animation: slideDown 1s forwards;}
+
 @keyframes slideDown {from {height: 0;} to{height: 288px;}}
 @keyframes slideUp {from {height: 288px;} to{height: 0;}}
