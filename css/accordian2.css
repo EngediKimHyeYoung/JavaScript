@@ -17,18 +17,21 @@
 /* #challenge #challengeSet>dt::before {content: ""; position: absolute; width: 26px; height: 30px; left: 30px; background-image: url("../images/ico.png"); } */
 /* #challenge #challengeSet>dt:nth-of-type(1):before {background-position-x: -84px; background-position-y: -205px;} */
 /* #challenge #challengeSet>dt:nth-of-type(2):before {background-position-x: -144px; background-position-y: -205px;} */
+
 /* #challenge #challengeSet>dt:after {content: ""; position: absolute; top: 50%; right: 30px; width: 17px; height: 11px; background-image: url("../images/ico.png"); background-position-x: -85px; background-position-y:-140px;} */
-/* #challenge #challengeSet>dd {padding: 0 30px 0 80px; transition: 1s; animation: slideUp 1s forwards; overflow: hidden; height: 0;} */
+/* #challenge #challengeSet>dd {padding: 0 30px 0 80px; transition: 1s height; animation: slideUp 1s forwards; overflow: hidden; height: 0;} */
 /* #challenge #challengeSet>dd>p {margin-bottom: 10px;} */
 
+/* #challenge #challengeSet>dd.active {display: block; animation: slideDown 1s forwards;} */
 /* #challenge #challengeSet>dt.active::before {background-position-x: -114px;} */
 /* #challenge #challengeSet>dt.active::after {background-position-y: -155px;} */
-/* #challenge #challengeSet>dd.active {animation: slideDown 1s forwards;} */
 
 /* #challenge #challengeSet dl dt, #challenge #challengeSet dl dd {display: inline-block; box-sizing: border-box;} */
 /* #challenge #challengeSet dl dt {width: 13%; position: relative;} */
 /* #challenge #challengeSet dl dt::after {content: "."; color: #999; position: absolute; right: 30px;} */
 /* #challenge #challengeSet dl dd {width: 83%; margin: 10px 0;} */
 
-/* @keyframes slideDown {from {height: 0;} to{height: 288px;}} */
-/* @keyframes slideUp {from {height: 288px;} to{height: 0;}} */
+/* @keyframes slideDown {from {height: 0px;} to{height: 288px;}} */
+/* @keyframes slideUp {from {height: 288px;} to{height: 0px;}} */
+
+

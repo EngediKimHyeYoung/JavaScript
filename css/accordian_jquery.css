@@ -18,7 +18,7 @@ h2+p {font-size: 16px; margin-bottom: 40px;}
 #challenge #challengeSet>dt:nth-of-type(1):before {background-position-x: -84px; background-position-y: -205px;}
 #challenge #challengeSet>dt:nth-of-type(2):before {background-position-x: -144px; background-position-y: -205px;}
 #challenge #challengeSet>dt:after {content: ""; position: absolute; top: 50%; right: 30px; width: 17px; height: 11px; background-image: url("../images/ico.png"); background-position-x: -85px; background-position-y:-140px;}
-#challenge #challengeSet>dd {padding: 0 30px 0 80px; display: none;}
+#challenge #challengeSet>dd {padding: 0 30px 0 80px; display: none; height: 288px;}
 #challenge #challengeSet>dd>p {margin-bottom: 10px;}
 
 #challenge #challengeSet>dd.active {display: block;}
