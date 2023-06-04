@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>scrollbot</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        body {background: black; height: 3000px;}
+        .vmore {position: fixed; left: 50%; margin-left: -52px; z-index: 20; bottom: 200px; width: 104px; height: 65px; }
+        .scroll {background: url("./images/more_mouse.png") no-repeat 50% 0; font-size: 0;}
+        .shake {animation: shake 8s  infinite;}
+
+        @keyframes shake {
+            0%, 100% {} 
+            10%, 30%, 50%, 70%, 90% {transform: translateY(-20px);} 
+            20%, 40%, 60%, 80% {transform: translateY(20px);}
+        }
+    </style>
+</head>
+
+<body>
+    <a class="vmore scroll shake" href="#" title="아래로 이동">하단 내용 보기</a>
+    <script>
+        $(window).scroll(function () {
+            // console.log($(window).scrollTop());
+            if($(window).scrollTop() > 600) {
+                $(".vmore").fadeOut();
+            } else {
+                $(".vmore").fadeIn();
+            }
+        });
+    </script>
+</body>
+
+</html>

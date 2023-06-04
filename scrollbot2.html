@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"  />  
+    <title>scrollbot</title>
+
+    <style>
+        body {background: #000; height: 3000px;}
+        h1 {color: white;}
+        .vmore {color: white; text-align: center; font-size: 14px; text-decoration: none; display: block; position: fixed; width: 110px; height: 65px; bottom: 200px; left: 50%; margin-left: -55px; z-index: 20; animation-name: shake; animation-duration: 8s; animation-iteration-count: infinite;}
+        .vmore span {display: block; margin-bottom: 10px;}
+        .vmore i {font-size: 30px;}
+        @keyframes shake {0%,100% {} 10%, 30%, 50%, 70%, 90% {transform: translateY(-20px);} 20%, 40%, 60%, 80% {transform: translateY(20px);}}
+    </style>
+</head>
+
+<body>
+    <h1>스크롤봇 만들기</h1>
+    <a class="vmore" href="#" title="아래로 이동"><span>SCROLL DOWN</span><i class="fas fa-angle-double-down"></i></a>
+    <script>
+        $(window).scroll(function () {
+            console.log($(window).scrollTop());
+            if($(window).scrollTop() > 500) {
+                $(".vmore").fadeOut();
+            } else {
+                $(".vmore").fadeIn();
+            }
+        });
+    </script>
+</body>
+</html>
