@@ -11,18 +11,17 @@
 
     <script>
         window.onload = function () {
-            var count= 5;
-            var time = 0;
+            var count = 0;
+            var time = 87;
             myTimer = setInterval(function () {
                 console.log("ing...");
                 document.getElementById("text").innerText = count;
-                count--;
-                if(count<time){
+                count++;
+                if(count == (time+1)){
                     clearInterval(myTimer);
                     console.log("end");
-                    document.getElementById("text").innerText = "end";
                 }
-            }, 1000);
+            }, 20);
         }
     </script>
 
