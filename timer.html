@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #text {font-size: 30px; font-weight: bold;}
+    </style>
+
+    <script>
+        window.onload = function () {
+            var count= 5;
+            var time = 0;
+            myTimer = setInterval(function () {
+                console.log("ing...");
+                document.getElementById("text").innerText = count;
+                count--
+                if(count<time){
+                    clearInterval(myTimer);
+                    console.log("end");
+                    document.getElementById("text").innerText = "end";
+                }
+            }, 1000);
+        }
+    </script>
+
+</head>
+<body>
+    <div id="text"></div>
+</body>
+</html>
