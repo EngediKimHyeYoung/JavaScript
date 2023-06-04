@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        // window.onload = function(){
+        //     var scrollNum;
+        //     var boxTop = document.getElementById("rec").offsetTop;
+        //     document.onscroll = function(){
+        //         scrollNum = window.scrollY;
+        //         console.log(scrollNum);
+        //         console.log(boxTop);
+        //         if (scrollNum > (boxTop - 400) && scrollNum < boxTop + 400) {
+        //             $("#rec").addClass("motionIn");
+        //             $("#rec").removeClass("motionOut");
+        //             $("#rec").css("background", "orange");
+        //         } else {
+        //             $("#rec").addClass("motionOut");
+        //             $("#rec").removeClass("motionIn");
+        //         }
+        //     }
+        // }
+
+        $(function () {
+            var scrollNum;
+            var boxTop;
+            $(window).on("scroll", function () {
+                scrollNum = $(window).scrollTop();
+                console.log(scrollNum);
+                // console.log("#rec---"+ $("#rec").offset().top);
+                // console.log("#rec---"+ $("#rec").position().top);
+                boxTop = $("#rec").position().top;
+                if (scrollNum > (boxTop - 400) && scrollNum < boxTop + 400) {
+                    $("#rec").addClass("motionIn");
+                    $("#rec").removeClass("motionOut");
+                    $("#rec").css("background", "orange");
+                } else {
+                    $("#rec").addClass("motionOut");
+                    $("#rec").removeClass("motionIn");
+                }
+            });
+        });
+    </script>
+
+    <style>
+        * {margin: 0; padding: 0; box-sizing: border-box;}
+        .box {width: 100%; height: 1400px; border: 3px solid black;}
+        .bg1 {background: orange;}
+        .bg2 {background: palevioletred;}
+        #rec {border: 2px solid black; width: 100px; height: 100px; margin: 50px; background: gray; transition: all 1s;}
+        #rec.motionIn {animation: motionIn 1s forwards;}
+        #rec.motionOut {animation: motionOut 1s forwards;}
+
+        @keyframes motionIn {
+            from {width: 100px; height: 100px;}
+            to {width: 300px; height: 300px;}
+        }
+        @keyframes motionOut {
+            from {width: 300px; height: 300px;}
+            to {width: 100px; height: 100px;}
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1" class="box bg1">box1</div>
+    <div id="rec"></div>
+    <div id="box2" class="box bg2">box2</div>
+    <div id="box3" class="box bg1">box3</div>
+    <div id="box4" class="box bg2">box4</div>
+</body>
+
+</html>
+
+</html>
