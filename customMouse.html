@@ -6,28 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <style>
-        #box {
-            background-color: orange;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            position: absolute;
-            top: 0;
-            left: 0;
-            text-align: center;
-            line-height: 50px;
-        }
-
-        .text {
-            position: absolute;
-            z-index: 1;
-        }
+        body {height: 4000px;}
+        #box {background-color: orange; line-height: 50px;  border-radius: 50%;  text-align: center;}
+        #box.size {width: 50px;  height: 50px;}
+        #box.position { position: absolute; top: 0; left: 0;}
+        .text {position: fixed; z-index: 1;}
     </style>
 </head>
 
 <body>
-    <div id="box"></div>
+    <div id="box" class="size position"></div>
     <div class="text">
         <p id="text0">text0</p>
         <p id="text1">text1</p>
@@ -41,26 +31,22 @@
         var targetY;
         var moveX;
         var moveY;
-
         var myMouseMove = function () {
             currentX = $("#box").offset().left;
             currentY = $("#box").offset().top;
-
             // 부드러운 움직임 공식 
             // 움직일대상좌표 = (타겟좌표 - 움직일대상좌표)/2  + 움직일대상좌표
             moveX = (targetX - currentX) * 0.15 + currentX;
             moveY = (targetY - currentY) * 0.15 + currentY;
-
             $("#box").css("left", moveX + "px");
             $("#box").css("top", moveY + "px");
-
             document.getElementById("text0").innerText = targetX;
             document.getElementById("text1").innerText = currentX;
             document.getElementById("text2").innerText = currentY;
         }
         $(document).mousemove(function (e) {
-            targetX = e.clientX - 25;
-            targetY = e.clientY - 25;
+            targetX = e.pageX - 25;
+            targetY = e.pageY - 25;
         });
         setInterval(function () {
             myMouseMove();
