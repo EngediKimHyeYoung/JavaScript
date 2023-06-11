@@ -3,13 +3,13 @@ body, h2, dl, dt, dd, p, ul, li {margin: 0; padding: 0; box-sizing: border-box;}
 header {height: 100px;}
 footer {height: 200px;}
 h2::after {content: "."; color: red;}
-a {text-decoration: none;}
-button {border: none; background: transparent; cursor: pointer;}
+a {text-decoration: none; color: black;}
+button {border: none; background-color: transparent; cursor: pointer;}
 li {list-style: none;}
 
-/* .inner {border: 1px solid red;} */
-.inner {width: 1440px; margin: 70px auto;}
 .center {text-align: center;}
+.pointBg {background-color: orangered;}
+.blackBg {background-color: black;}
 
 .whiteText {color: white;}
 
@@ -17,49 +17,36 @@ li {list-style: none;}
 .bigText {font-size: 20px;}
 .smallText {font-size: 14px;}
 
-.pointBg {background-color: #f37321;}
-.blackBg {background-color: black;}
+.inner {width: 1440px; margin: 70px auto;}
+.arrow {position: absolute; top: -50px; right: 0; width: 31px; height: 31px; background-image: url("../images/ico.png");}
+.arrow.prev {right: 150px; background-position: -351px -205px;}
+.arrow.next {right: 50px; background-position: -269px -205px;}
 
-.button {display: block; height: 45px; padding: 0 20px; line-height: 45px; width: fit-content; border-radius: 30px; font-weight: bold;}
-.button:hover {background-color: black;}
-.arrow {position: absolute; top: -50px; width: 31px; height: 31px; background-image: url("../images/ico.png");}
-.prev {right:150px; background-position: -351px -205px;}
-.next {right: 50px; background-position: -269px -205px;}
-
-/* #product {border: 2px solid red;} */
 #product {overflow: hidden;}
 #product {height: 780px;}
+#product #imgSet {white-space: nowrap; height: 540px; margin-top: 40px; transition: transform 1s;}
 
-/* #product #imgSet {border: 2px solid blue;} */
-#product #imgSet {position: relative; margin-top: 40px; height: 540px; transition: 1s transform; white-space: nowrap;}
-#product #imgSet img {display: inline-block;}
-
-/* #product #textSet {border: 5px solid blue;} */
 #product #textSet {position: relative; width: 1120px; left: 50%; margin-left: -560px;}
-#product #textSet::before {content: ""; background-color: white; position: absolute; top: -80px;  width: 100%; height: 80px;}
-#product #textSet::after {content: ""; background-color: #2c384b; position: absolute; top: 0px;  width: 100%; height: 140px;}
+#product #textSet::before {content: ""; background-color: white; width: 100%; height: 80px; position: absolute; top: -80px;}
+#product #textSet::after {content: ""; background-color: gray; width: 100%; height: 140px; position: absolute; top: 0px;}
 
-/* #product dt {border: 1px solid red;} */
-#product dt {position: absolute; top: -50px; left: 50px; font-weight: bold; width: fit-content;}
-/* #product dd>p {border: 1px solid red;} */
-#product dd>p {position: absolute; top: 0; left: 0}
+#product #textSet dt {position: absolute; top: -50px; left: 50px;}
+#product #textSet dd>p {position: absolute; top: 0px; left: 0px; padding: 40px 270px 40px 220px;}
+#product #textSet dd>p>span {position: absolute; top: 40px; left: 40px; font-weight: bold;}
 
-#product dt, #product dd>p {margin-top: 30px; opacity: 0;}
+#product #textSet dd .button {position: absolute; top: 50px; right: 50px; height: 45px; line-height: 45px; border-radius: 23px; padding: 0 20px; font-weight: bold; display: none;}
+#product #textSet dd .button:hover {background-color: black;}
 
-#product dd>p { padding: 40px 270px 40px 220px;}
-#product dd>p>span {position: absolute; top: 40px; left: 40px; font-weight: bold; }
-#product dd .button {position: absolute; top: 50px; right: 50px; display: none;} 
-
-/* #productList {border: 3px solid blue;} */
-#productList {position: absolute; top: -120px; left: 50%; margin-left: -45px;}
-#productList li {width: 10px; height: 10px; background-color: white; border-radius: 50%; display: inline-block; margin: 0 10px; cursor: pointer;}
-#productList li.active {background-color: red;}
-
-#product dd>p {z-index: 1;}
-#product dd .button {z-index: 2;}
-#productList {z-index: 3;}
-
-#product dt.active, #product dd.active>p {animation: textMove 1s forwards;}
-#product .button.active {display: block;}
+#product #textSet dt, #product #textSet dd>p {margin-top: 30px; opacity: 0;}
+#product #textSet dt.active, #product #textSet dd.active>p {animation: textMove 1s forwards;}
+#product #textSet dd .button.active {display: block;}
 @keyframes textMove {from {} to {margin-top: 0px; opacity: 1;}}
 
+#productList {position: absolute; top: 0; left: 0; top: -120px; left: 50%; margin-left: -45px; cursor: pointer;}
+#productList li {width: 10px; height: 10px; background-color: white; display: inline-block; margin: 0 10px; border-radius: 50%;}
+#productList li.active {background-color: orangered;}
+
+#product #textSet dt {z-index: 1; }
+#product #textSet dd>p {z-index: 2;}
+#product #textSet dd .button {z-index: 3;}
+/* #product #productList {z-index: 4;} */
